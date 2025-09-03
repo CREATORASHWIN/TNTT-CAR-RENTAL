@@ -1,0 +1,47 @@
+<div
+  class="bg-white shadow-md rounded-xl overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-500 ease-in-out"
+>
+  <!-- Car Image -->
+  <div class="overflow-hidden">
+    <img [src]="car.image" alt="{{ car.name }}"
+         class="w-full h-52 object-cover transition-transform duration-500 ease-in-out transform hover:scale-110">
+  </div>
+
+  <!-- Details -->
+  <div class="p-5 flex flex-col justify-between h-52">
+    <div>
+      <!-- Car Name -->
+      <h3 class="text-lg font-bold text-gray-800 truncate hover:text-blue-600 transition-colors duration-300">
+        {{ car.name }}
+      </h3>
+
+      <!-- Price -->
+      <p class="text-gray-600 text-sm mt-1">
+        From <span class="font-bold text-blue-600">AED {{ car.price }}</span>/day
+      </p>
+
+      <!-- Rental Info -->
+      <div class="text-gray-700 text-sm mt-2 space-y-1">
+        <p>10 Hrs: <span class="font-semibold">AED {{ car.rental.basePrice }}</span></p>
+        <p>Extra Hour: <span class="font-semibold">AED {{ car.rental.extraHourPrice }}</span></p>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-4 flex space-x-3">
+      <!-- WhatsApp Button -->
+      <a [href]="car.whatsappLink" target="_blank"
+         class="flex-1 bg-green-500 text-white py-2 rounded-lg text-center font-medium 
+                hover:bg-green-600 hover:shadow-md transform hover:-translate-y-1 transition-all duration-300">
+        WhatsApp
+      </a>
+
+      <!-- Call Button -->
+      <a [href]="'tel:' + car.phone"
+         class="flex-1 bg-blue-500 text-white py-2 rounded-lg text-center font-medium 
+                hover:bg-blue-600 hover:shadow-md transform hover:-translate-y-1 transition-all duration-300">
+        Call
+      </a>
+    </div>
+  </div>
+</div>

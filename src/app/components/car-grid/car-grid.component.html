@@ -1,0 +1,39 @@
+<section id="cars" class="py-12 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <h2 class="text-3xl font-extrabold mb-4 text-gray-900 text-center">
+      🚗 Our Cars Collection
+    </h2>
+    <p class="text-center text-gray-600 mb-12">
+      Explore our top-rated vehicles, carefully curated for comfort, style, and performance.
+    </p>
+
+    <!-- Filter Buttons -->
+    <div class="flex justify-center gap-4 mb-8 flex-wrap">
+      <button (click)="filterCars('All')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        All
+      </button>
+      <button (click)="filterCars('SUV')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        SUVs
+      </button>
+      <button (click)="filterCars('Sedan')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        Sedans
+      </button>
+      <button (click)="filterCars('Luxury')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        Luxury
+      </button>
+      <button (click)="filterCars('Van')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        Vans
+      </button>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <app-car-card
+        *ngFor="let car of filteredCars"
+        [car]="car"
+        class="transition-transform duration-300 hover:scale-105 hover:shadow-lg rounded-lg"
+      ></app-car-card>
+    </div>
+  </div>
+</section>

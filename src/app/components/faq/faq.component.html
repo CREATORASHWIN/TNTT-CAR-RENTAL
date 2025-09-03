@@ -1,0 +1,25 @@
+<section id="faq" class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <h2 class="text-3xl font-extrabold mb-4 text-gray-900 text-center">
+      ❓ Frequently Asked Questions
+    </h2>
+    <p class="text-center text-gray-600 mb-12">
+      Find answers to the most common questions about our car rental services.
+    </p>
+
+    <!-- FAQ Accordion -->
+    <div class="space-y-4 max-w-3xl mx-auto">
+      <div *ngFor="let faq of faqs; let i = index" class="bg-gray-50 rounded-lg shadow p-4">
+        <button class="w-full text-left flex justify-between items-center py-2 font-semibold text-gray-800 focus:outline-none"
+                (click)="toggleFaq(i)">
+          {{ faq.question }}
+          <span class="ml-2 transform transition-transform duration-300" [class.rotate-180]="faqOpen[i]">▼</span>
+        </button>
+        <div *ngIf="faqOpen[i]" class="mt-2 text-gray-600 text-sm">
+          {{ faq.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
