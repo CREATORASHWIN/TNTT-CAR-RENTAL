@@ -1,18 +1,137 @@
-/* Wrap each letter dynamically using Tailwind utilities */
-.animated-text {
-  display: inline-block;
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.animated-text span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(50%);
-  animation: slideIn 0.5s forwards;
+/* ✅ Desktop — shift video UP so top looks correct */
+.hero-video {
+  position: absolute;
+  top: -10%;  /* ✅ moves video up */
+  left: 0;
+  width: 100%;
+  height: 120%; /* ✅ increases height to avoid gaps */
+  object-fit: cover;
+  z-index: 0;
 }
 
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* ✅ Mobile: Center the video for better composition */
+@media (max-width: 768px) {
+  .hero-video {
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Dark Overlay for Readability */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* Explore Button */
+.explore-btn {
+  padding: 12px 24px;
+  background-color: #0b74de;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(11, 116, 222, 0.3);
+}
+
+.explore-btn:hover {
+  background-color: #095bb5;
+  box-shadow: 0 6px 14px rgba(11, 116, 222, 0.5);
+}
+
+/* Floating Car Animation (Optional) */
+.hero-car {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(180px, 20vw, 400px);
+  z-index: 3;
+  animation: carMotion 8s ease-in-out infinite;
+  object-fit: contain;
+}
+
+@keyframes carMotion {
+  0%   { transform: translateX(-50%) translateY(0); }
+  25%  { transform: translateX(calc(-50% - 20px)) translateY(-10px); }
+  50%  { transform: translateX(-50%) translateY(-20px); }
+  75%  { transform: translateX(calc(-50% + 20px)) translateY(-10px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+  .hero-section {
+    height: 90vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-car {
+    width: 45vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    height: 80vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-car {
+    width: 55vw;
   }
 }

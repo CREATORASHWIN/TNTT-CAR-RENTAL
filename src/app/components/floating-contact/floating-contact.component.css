@@ -1,63 +1,45 @@
-/* Base floating button styles */
-.floating-contact {
+.bottom-contact-bar {
   position: fixed;
-  bottom: 2rem;
-  right: 1rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 9999;
+  z-index: 999999;
+  text-align: center;
+  font-family: inherit;
 }
 
-.floating-contact a {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Buttons */
+.bottom-contact-bar a {
+  flex: 1;
+  padding: 14px 0;
   color: white;
-  font-size: 1.75rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
-.floating-contact a:first-child {
-  background-color: #25D366; /* WhatsApp green */
+/* WhatsApp */
+.whatsapp-full {
+  background: #25D366;
 }
 
-.floating-contact a:last-child {
-  background-color: #0077B5; /* Call blue */
+/* Call */
+.call-full {
+  background: #0b74de;
 }
 
-.floating-contact a:hover {
-  transform: scale(1.1);
+.bottom-contact-bar i {
+  font-size: 1.4rem;
 }
 
-/* Portrait mobile */
-@media (max-width: 768px) {
-  .floating-contact {
-    bottom: 1.5rem;
-    right: 1rem;
-  }
-
-  .floating-contact a {
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
-  }
-}
-
-/* Landscape mobile (rotated) */
-@media (max-width: 1024px) and (orientation: landscape) {
-  .floating-contact {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .floating-contact a {
-    width: 2.8rem;
-    height: 2.8rem;
-    font-size: 1.4rem;
+/* ✅ Show only on mobile */
+@media (min-width: 768px) {
+  .bottom-contact-bar {
+    display: none;
   }
 }
