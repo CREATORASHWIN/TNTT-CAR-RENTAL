@@ -1,7 +1,8 @@
+/* 🌟 HERO SECTION */
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   min-height: 600px;
   overflow: hidden;
   display: flex;
@@ -9,42 +10,41 @@
   justify-content: center;
 }
 
-/* ✅ Desktop — shift video UP so top looks correct */
+/* 🎥 Background Video */
 .hero-video {
   position: absolute;
-  top: -10%;  /* ✅ moves video up */
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
-  height: 120%; /* ✅ increases height to avoid gaps */
+  height: 120%;
   object-fit: cover;
+  transform: translate(-50%, -50%);
   z-index: 0;
 }
 
-/* ✅ Mobile: Center the video for better composition */
+/* ✅ MOBILE FIX: Prevent video from zooming too much */
 @media (max-width: 768px) {
   .hero-video {
-    top: 50%;
-    left: 50%;
     width: auto;
     height: 100%;
     min-width: 100%;
-    transform: translate(-50%, -50%);
+    min-height: 100%;
   }
 }
 
-/* Dark Overlay for Readability */
+/* 🌓 Dark Overlay */
 .hero-section::before {
   content: '';
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
-/* Hero Content */
+/* ✨ HERO CONTENT */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -66,14 +66,14 @@
   opacity: 0.9;
 }
 
-/* Explore Button */
+/* 🚀 BUTTON */
 .explore-btn {
   padding: 12px 24px;
   background-color: #0b74de;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
-  transition: background 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
   font-weight: 500;
   box-shadow: 0 4px 10px rgba(11, 116, 222, 0.3);
 }
@@ -83,7 +83,7 @@
   box-shadow: 0 6px 14px rgba(11, 116, 222, 0.5);
 }
 
-/* Floating Car Animation (Optional) */
+/* 🚗 Floating Car (Optional) */
 .hero-car {
   position: absolute;
   bottom: 0;
@@ -103,35 +103,16 @@
   100% { transform: translateX(-50%) translateY(0); }
 }
 
-/* Responsive Tweaks */
+/* 📱 RESPONSIVE */
 @media (max-width: 992px) {
-  .hero-section {
-    height: 90vh;
-  }
-
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-car {
-    width: 45vw;
-  }
+  .hero-section { height: 90vh; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-car { width: 45vw; }
 }
 
 @media (max-width: 600px) {
-  .hero-section {
-    height: 80vh;
-  }
-
-  .hero-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .hero-car {
-    width: 55vw;
-  }
+  .hero-section { height: 80vh; }
+  .hero-content h1 { font-size: 1.8rem; }
+  .hero-content p { font-size: 1rem; }
+  .hero-car { width: 55vw; }
 }
