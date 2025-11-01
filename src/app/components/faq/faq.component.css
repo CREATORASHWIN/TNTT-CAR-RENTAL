@@ -1,0 +1,116 @@
+/* ----------------------------- */
+/* MODERN REVIEW CAROUSEL DESIGN */
+/* ----------------------------- */
+
+#reviews {
+  background: linear-gradient(135deg, #aabef4, #d9e4ff);
+}
+
+.review-carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ✅ Modern Glassmorphism Card with color gradients */
+.review-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 22px;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(145deg, rgba(230, 10, 10, 0.6), rgba(240, 240, 255,0.5));
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ✅ Smooth hover effect */
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(145deg, rgba(255,240,240,0.7), rgba(240,255,255,0.6));
+}
+
+/* ✅ Colored Circle with gradient variations */
+.review-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ✅ You can change circle gradients for different cards if you want more colors */
+/* Example: nth-child */
+.review-card:nth-child(2) .review-circle {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+.review-card:nth-child(3) .review-circle {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+.review-card:nth-child(4) .review-circle {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+.review-card:nth-child(5) .review-circle {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+.review-card:nth-child(6) .review-circle {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+.review-card:nth-child(7) .review-circle {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+
+/* ✅ Modern Stars */
+.stars {
+  text-align: center;
+  font-size: 22px;
+  color: #FFD700;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+/* ✅ Review Text */
+.review-card p {
+  color: #2e2e2e;
+  line-height: 1.6;
+}
+
+/* ✅ Reviewer Name */
+.review-card .reviewer-name {
+  font-weight: 600;
+  color: #111827;
+  margin-top: 10px;
+}
+
+/* ----------------------------- */
+/* RESPONSIVE DESIGN */
+/* ----------------------------- */
+
+@media (min-width: 768px) {
+  .review-card {
+    min-width: 45%; /* 2 cards visible on tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .review-card {
+    min-width: 30%; /* 3 cards visible on desktop */
+  }
+
+  .review-carousel {
+    padding: 40px 0;
+  }
+}

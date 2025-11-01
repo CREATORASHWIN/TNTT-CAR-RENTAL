@@ -1,25 +1,72 @@
-<section id="faq" class="py-12 bg-white">
+<section id="reviews" class="py-12 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
     <!-- Section Header -->
     <h2 class="text-3xl font-extrabold mb-4 text-gray-900 text-center">
-      ❓ Frequently Asked Questions
+      ⭐ Customer Reviews
     </h2>
     <p class="text-center text-gray-600 mb-12">
-      Find answers to the most common questions about our car rental services.
+      Real experiences from customers who booked our cars with driver in Dubai.
     </p>
 
-    <!-- FAQ Accordion -->
-    <div class="space-y-4 max-w-3xl mx-auto">
-      <div *ngFor="let faq of faqs; let i = index" class="bg-gray-50 rounded-lg shadow p-4">
-        <button class="w-full text-left flex justify-between items-center py-2 font-semibold text-gray-800 focus:outline-none"
-                (click)="toggleFaq(i)">
-          {{ faq.question }}
-          <span class="ml-2 transform transition-transform duration-300" [class.rotate-180]="faqOpen[i]">▼</span>
-        </button>
-        <div *ngIf="faqOpen[i]" class="mt-2 text-gray-600 text-sm">
-          {{ faq.answer }}
+    <!-- Carousel Wrapper -->
+    <div class="review-carousel overflow-hidden relative">
+      <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+
+        <!-- Review Card -->
+        <div class="review-card min-w-full sm:min-w-1/2 lg:min-w-1/3 p-6 bg-white/50 backdrop-blur-md rounded-2xl shadow-md text-center">
+          <!-- Colored Circle -->
+          <div class="review-circle mx-auto mb-4"></div>
+          <div class="stars text-yellow-500 text-lg mb-2">★★★★★</div>
+          <p class="text-gray-700 italic mb-3">"Excellent service! The driver was punctual and the car was spotless. Highly recommended."</p>
+          <p class="text-gray-900 font-semibold">— Ahmed R.</p>
         </div>
+
+        <!-- Repeat for other reviews -->
+        <div class="review-card min-w-full sm:min-w-1/2 lg:min-w-1/3 p-6 bg-white/50 backdrop-blur-md rounded-2xl shadow-md text-center">
+          <div class="review-circle mx-auto mb-4"></div>
+          <div class="stars text-yellow-500 text-lg mb-2">★★★★★</div>
+          <p class="text-gray-700 italic mb-3">"Very smooth booking process. Affordable prices and professional drivers."</p>
+          <p class="text-gray-900 font-semibold">— Sarah M.</p>
+        </div>
+
+        <div class="review-card min-w-full sm:min-w-1/2 lg:min-w-1/3 p-6 bg-white/50 backdrop-blur-md rounded-2xl shadow-md text-center">
+          <div class="review-circle mx-auto mb-4"></div>
+          <div class="stars text-yellow-500 text-lg mb-2">★★★★★</div>
+          <p class="text-gray-700 italic mb-3">"The best car rental service in Dubai. We booked for 3 days and the experience was perfect."</p>
+          <p class="text-gray-900 font-semibold">— Jonathan P.</p>
+        </div>
+
+        <div class="review-card min-w-full sm:min-w-1/2 lg:min-w-1/3 p-6 bg-white/50 backdrop-blur-md rounded-2xl shadow-md text-center">
+          <div class="review-circle mx-auto mb-4"></div>
+          <div class="stars text-yellow-500 text-lg mb-2">★★★★★</div>
+          <p class="text-gray-700 italic mb-3">"Driver was friendly and knew all the best routes. Great service overall."</p>
+          <p class="text-gray-900 font-semibold">— Priya K.</p>
+        </div>
+
+        <div class="review-card min-w-full sm:min-w-1/2 lg:min-w-1/3 p-6 bg-white/50 backdrop-blur-md rounded-2xl shadow-md text-center">
+          <div class="review-circle mx-auto mb-4"></div>
+          <div class="stars text-yellow-500 text-lg mb-2">★★★★★</div>
+          <p class="text-gray-700 italic mb-3">"Car was clean, comfortable, and the ride was smooth. Would definitely book again."</p>
+          <p class="text-gray-900 font-semibold">— Mohammed A.</p>
+        </div>
+
+        <div class="review-card min-w-full sm:min-w-1/2 lg:min-w-1/3 p-6 bg-white/50 backdrop-blur-md rounded-2xl shadow-md text-center">
+          <div class="review-circle mx-auto mb-4"></div>
+          <div class="stars text-yellow-500 text-lg mb-2">★★★★★</div>
+          <p class="text-gray-700 italic mb-3">"Very reliable service. The driver arrived early and helped with luggage."</p>
+          <p class="text-gray-900 font-semibold">— Elena S.</p>
+        </div>
+
+        <div class="review-card min-w-full sm:min-w-1/2 lg:min-w-1/3 p-6 bg-white/50 backdrop-blur-md rounded-2xl shadow-md text-center">
+          <div class="review-circle mx-auto mb-4"></div>
+          <div class="stars text-yellow-500 text-lg mb-2">★★★★★</div>
+          <p class="text-gray-700 italic mb-3">"Affordable and excellent customer support. This is now my go-to service in Dubai."</p>
+          <p class="text-gray-900 font-semibold">— David W.</p>
+        </div>
+
       </div>
     </div>
+
   </div>
 </section>
