@@ -2,7 +2,7 @@
 <section class="hero-section">
 
   <!-- Background Video -->
-  <video autoplay muted loop playsinline class="hero-video">
+  <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
     <source src="hero-video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -25,3 +25,28 @@
   </div>
 
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('heroVideo');
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay failed, add a tiny overlay for user interaction
+        console.log('Autoplay blocked, tap to play.');
+        const overlay = document.createElement('div');
+        overlay.style.position = 'absolute';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.zIndex = 3;
+        overlay.style.cursor = 'pointer';
+        overlay.addEventListener('click', () => {
+          video.play();
+          overlay.remove();
+        });
+        document.querySelector('.hero-section').appendChild(overlay);
+      });
+    }
+  });
+</script>
