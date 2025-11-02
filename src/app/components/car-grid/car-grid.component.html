@@ -1,5 +1,6 @@
 <section id="cars" class="py-12 bg-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
     <!-- Section Header -->
     <h2 class="text-3xl font-extrabold mb-4 text-gray-900 text-center">
       🚗 Our Cars Collection
@@ -25,6 +26,11 @@
       <button (click)="filterCars('Van')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
         Vans
       </button>
+
+      <!-- ✅ NEW: Limousine Button -->
+      <button (click)="filterCars('Limousine')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+        Limousines
+      </button>
     </div>
 
     <!-- Responsive Grid -->
@@ -35,5 +41,6 @@
         class="transition-transform duration-300 hover:scale-105 hover:shadow-lg rounded-lg"
       ></app-car-card>
     </div>
+
   </div>
 </section>

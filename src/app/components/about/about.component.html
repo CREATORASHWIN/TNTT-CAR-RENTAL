@@ -1,31 +1,72 @@
-<section id="about" class="py-16 bg-gray-50">
+<section id="about" class="py-16 bg-gradient-to-br from-gray-100 to-gray-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-      <!-- Left Side: Image -->
-      <div class="about-image">
-        <img src="about-us.jpg" alt="About TNTT Car Rentals" class="rounded-2xl shadow-lg w-full object-cover">
+      <!-- LEFT IMAGE WITH HOVER EFFECT -->
+      <div class="relative group">
+        <img 
+          src="about-us.jpg" 
+          alt="About TNTT Car Rentals"
+          class="rounded-2xl shadow-xl w-full object-cover transform transition duration-700 group-hover:scale-105 group-hover:shadow-2xl"
+        >
+        <div class="absolute inset-0 rounded-2xl bg-black/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
       </div>
 
-      <!-- Right Side: Text Content -->
+      <!-- RIGHT TEXT -->
       <div class="about-text">
         <h2 class="text-3xl font-extrabold text-gray-900 mb-4">
           About TNTT Car Rentals
         </h2>
-        <p class="text-gray-600 mb-6">
-          TNTT Car Rentals provides reliable and affordable car rental services with professional drivers in Dubai.
-          We are committed to making your travel comfortable, safe, and hassle-free.
+
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          TNTT Car Rentals provides a premium travel experience with a wide range
+          of luxury cars, vans, and buses. Enjoy comfort, reliability, and
+          professional chauffeur service across Dubai.
         </p>
+
+        <!-- ✅ Stats with Hover Effects -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+
+          <div class="p-6 bg-white rounded-xl shadow-md text-center transform transition duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer">
+            <h3 class="text-3xl font-bold text-blue-600">75+</h3>
+            <p class="text-gray-700 text-sm mt-1">Cars Available</p>
+          </div>
+
+          <div class="p-6 bg-white rounded-xl shadow-md text-center transform transition duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer">
+            <h3 class="text-3xl font-bold text-blue-600">25+</h3>
+            <p class="text-gray-700 text-sm mt-1">Vans & MPVs</p>
+          </div>
+
+          <div class="p-6 bg-white rounded-xl shadow-md text-center transform transition duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer">
+            <h3 class="text-3xl font-bold text-blue-600">15+</h3>
+            <p class="text-gray-700 text-sm mt-1">Luxury Buses</p>
+          </div>
+
+        </div>
+
+        <!-- ✅ Features -->
         <ul class="space-y-3 text-gray-700">
-          <li>✅ Wide range of luxury, sports, and economy cars</li>
-          <li>✅ Professional and punctual drivers</li>
-          <li>✅ Affordable prices with no hidden fees</li>
-          <li>✅ 24/7 customer support</li>
+          <li class="flex items-center gap-2 hover:text-blue-600 transition">
+            ✅ Largest fleet of economy, luxury & premium vehicles
+          </li>
+          <li class="flex items-center gap-2 hover:text-blue-600 transition">
+            ✅ Professional, trained & uniformed drivers
+          </li>
+          <li class="flex items-center gap-2 hover:text-blue-600 transition">
+            ✅ No hidden fees — fully transparent pricing
+          </li>
+          <li class="flex items-center gap-2 hover:text-blue-600 transition">
+            ✅ 24/7 customer support & airport pickup
+          </li>
         </ul>
-        <a href="#cars" class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-500 transition">
-          🚗 View Our Cars
+
+        <!-- CTA -->
+        <a href="#cars" 
+           class="mt-7 inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-500 hover:shadow-xl transform hover:scale-105 transition duration-300">
+          🚗 View Our Fleet
         </a>
+
       </div>
 
     </div>

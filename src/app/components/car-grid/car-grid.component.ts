@@ -30,12 +30,18 @@ export class CarGridComponent {
     { name: 'Honda Accord', price: 150, image: 'accord.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Sedan', rental: { baseHours: 10, basePrice: 150, extraHourPrice: 50 } },
     { name: 'Volkswagen Touareg', price: 410, image: 'touareg.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 410, extraHourPrice: 72 } },
     { name: 'Mazda CX-9', price: 220, image: 'cx9.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 220, extraHourPrice: 55 } },
-    { name: 'Kia Sorento', price: 200, image: 'sorento.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 200, extraHourPrice: 50 } }
+    { name: 'Kia Sorento', price: 200, image: 'sorento.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 200, extraHourPrice: 50 } },
+
+    /* ✅ ✅ ADDED LIMOUSINE MODELS */
+    { name: 'Lincoln Navigator Limousine', price: 900, image: 'lincoln-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 900, extraHourPrice: 120 } },
+    { name: 'Hummer H2 Stretch Limo', price: 1100, image: 'hummer-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1100, extraHourPrice: 150 } },
+    { name: 'Cadillac Escalade Limo', price: 1200, image: 'escalade-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1200, extraHourPrice: 180 } },
+    { name: 'Chrysler 300 Stretch Limousine', price: 950, image: 'chrysler-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 950, extraHourPrice: 130 } },
+    { name: 'GMC Yukon XL Limousine', price: 1000, image: 'yukon-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1000, extraHourPrice: 140 } }
   ];
 
-  filteredCars = [...this.cars]; // initially show all
+  filteredCars = [...this.cars];
 
-  // Filter cars by category
   filterCars(category: string) {
     if (category === 'All') {
       this.filteredCars = [...this.cars];
@@ -45,7 +51,6 @@ export class CarGridComponent {
     this.scrollToCars();
   }
 
-  // Smooth scroll to car grid
   scrollToCars() {
     const element = document.getElementById('cars');
     if (element) {
