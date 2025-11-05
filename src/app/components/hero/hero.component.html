@@ -1,52 +1,27 @@
-<!-- 🌟 HERO SECTION START -->
 <section class="hero-section">
-
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
-    <source src="hero-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Hero Content -->
-  <div class="hero-content">
-    <h1 class="animated-text">
-      Rent Affordable Cars with Driver in Dubai
-    </h1>
-
-    <p class="highlight-line">
-      Choose from 
-      <span class="luxury">Luxury</span>, 
-      <span class="sports">Sports</span>, 
-      <span class="economy">Economy</span> cars at the 
-      <span class="best-prices">best prices</span>.
-    </p>
-
-    <a href="#cars" class="explore-btn">🚀 Explore Cars</a>
+  <!-- FOG LAYERS -->
+  <div id="foglayer_01" class="fog">
+    <div class="image01"></div>
+    <div class="image02"></div>
+  </div>
+  <div id="foglayer_02" class="fog">
+    <div class="image01"></div>
+    <div class="image02"></div>
+  </div>
+  <div id="foglayer_03" class="fog">
+    <div class="image01"></div>
+    <div class="image02"></div>
   </div>
 
-</section>
+  <!-- CAR MOVING RIGHT TO LEFT WITH CENTER PAUSE -->
+  <img class="car-img" src="car.png" alt="Racing Car">
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('heroVideo');
-    if (video) {
-      video.play().catch(() => {
-        // Autoplay failed, add a tiny overlay for user interaction
-        console.log('Autoplay blocked, tap to play.');
-        const overlay = document.createElement('div');
-        overlay.style.position = 'absolute';
-        overlay.style.top = 0;
-        overlay.style.left = 0;
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.zIndex = 3;
-        overlay.style.cursor = 'pointer';
-        overlay.addEventListener('click', () => {
-          video.play();
-          overlay.remove();
-        });
-        document.querySelector('.hero-section').appendChild(overlay);
-      });
-    }
-  });
-</script>
+  <!-- HERO CONTENT CENTERED -->
+  <div class="hero-content">
+    <h1>Rent Luxury Cars with Ease</h1>
+    <p>Choose from a wide range of premium cars and enjoy seamless car rentals at affordable prices.</p>
+    <div class="hero-buttons">
+      <a href="#explore" class="explore-btn">Book Now</a>
+    </div>
+    <p class="tagline">Fast, Reliable, and Comfortable – Your Ride, Your Way!</p>
+  </div>
