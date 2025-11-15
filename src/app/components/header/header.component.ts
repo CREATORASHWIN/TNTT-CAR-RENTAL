@@ -11,24 +11,39 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   menuOpen = false;
 
-  // Toggle mobile menu
+  // ✅ Toggle mobile menu
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
 
-  // Scroll to any section by ID (mobile-friendly)
+  // ✅ Scroll or Redirect based on current page
   scrollToSection(id: string) {
-    this.menuOpen = false; // 1️⃣ Close mobile menu first
-    setTimeout(() => {      // 2️⃣ Wait a tiny moment for menu to close
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' }); // 3️⃣ Smooth scroll
-      }
-    }, 100); // 100ms delay
+    // Scroll to element first
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Close mobile menu after short delay
+    if (this.menuOpen) {
+      setTimeout(() => {
+        this.menuOpen = false;
+      }, 200); // 200ms delay ensures scroll executes first
+    }
+
+    // Redirect if not on homepage
+    if (window.location.pathname !== '/') {
+      window.location.href = '/#' + id;
+    }
   }
 
-  // Scroll specifically to Contact section
+  // ✅ Scroll to contact section
   scrollToContact() {
     this.scrollToSection('contact');
+  }
+
+  // ✅ Go to homepage when clicking logo
+  goHome() {
+    window.location.href = '/';
   }
 }

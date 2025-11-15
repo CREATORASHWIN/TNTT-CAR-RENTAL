@@ -26,21 +26,96 @@
       <button (click)="filterCars('Van')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
         Vans
       </button>
-
-      <!-- ✅ NEW: Limousine Button -->
       <button (click)="filterCars('Limousine')" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
         Limousines
       </button>
     </div>
 
-    <!-- Responsive Grid -->
+    <!-- ✅ Car Cards Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <app-car-card
-        *ngFor="let car of filteredCars"
-        [car]="car"
-        class="transition-transform duration-300 hover:scale-105 hover:shadow-lg rounded-lg"
-      ></app-car-card>
-    </div>
 
+      <div
+        *ngFor="let car of filteredCars"
+        class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 hover:scale-105 p-4"
+      >
+
+        <!-- ✅ Image Click → Car Details -->
+        <div class="cursor-pointer rounded-xl overflow-hidden" (click)="viewCar(car.name)">
+          <img [src]="car.image" [alt]="car.name" class="w-full h-48 object-cover rounded-xl">
+        </div>
+
+        <!-- Car Name -->
+        <h3 class="text-lg font-bold mt-4">{{ car.name }}</h3>
+
+        <!-- Price -->
+        <p class="text-blue-600 font-semibold text-md">AED {{ car.price }}</p>
+
+        <!-- ✅ Action Buttons -->
+        <div class="flex flex-wrap gap-2 mt-4">
+
+          <!-- WhatsApp -->
+          <a
+            [href]="car.whatsappLink + '?text=Hi%20I%20want%20to%20book%20' + car.name"
+            target="_blank"
+            class="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg text-center"
+          >
+            WhatsApp
+          </a>
+
+          <!-- Call -->
+          <a
+            [href]="'tel:' + car.phone"
+            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-center"
+          >
+            Call
+          </a>
+
+          <!-- Quote -->
+          <button
+            class="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg mt-2"
+            (click)="openQuote(car)"
+          >
+            Get inquiry 
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
   </div>
+
+  <!-- ✅ QUOTE POPUP MODAL -->
+  <div *ngIf="showQuote" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white w-11/12 max-w-md p-6 rounded-xl shadow-2xl">
+
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">Get a inquiry</h2>
+
+      <p class="text-gray-700 mb-4">
+        Selected Car: <strong>{{ selectedCar?.name }}</strong>
+      </p>
+
+      <!-- ✅ User Input Fields -->
+      <input [(ngModel)]="quoteName" type="text" placeholder="Your Name" class="w-full p-2 border rounded mb-3">
+      <input [(ngModel)]="quotePhone" type="tel" placeholder="Phone Number" class="w-full p-2 border rounded mb-3">
+      <textarea [(ngModel)]="quoteMsg" placeholder="Message" class="w-full p-2 border rounded mb-3"></textarea>
+
+      <!-- ✅ Submit (calls submitQuote) -->
+      <button
+        (click)="submitQuote()"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg mb-2"
+      >
+        Submit
+      </button>
+
+      <button
+        class="w-full bg-gray-300 hover:bg-gray-400 text-black py-2 rounded-lg"
+        (click)="closeQuote()"
+      >
+        Close
+      </button>
+
+    </div>
+  </div>
+
 </section>

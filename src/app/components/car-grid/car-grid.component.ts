@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarCardComponent } from '../car-card/car-card.component';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'; // ✅ required for ngModel
 
 @Component({
   selector: 'app-car-grid',
   standalone: true,
-  imports: [CommonModule, CarCardComponent],
+  imports: [CommonModule, FormsModule],
   templateUrl: './car-grid.component.html',
   styleUrls: ['./car-grid.component.css']
 })
 export class CarGridComponent {
+
+  constructor(private router: Router) {}
+
+  // ✅ FULL CAR LIST
   cars = [
     { name: 'Nissan Patrol', price: 360, image: 'patrol.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 360, extraHourPrice: 65 } },
     { name: 'Toyota Corolla', price: 120, image: 'corolla.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Sedan', rental: { baseHours: 10, basePrice: 120, extraHourPrice: 65 } },
@@ -31,30 +36,76 @@ export class CarGridComponent {
     { name: 'Volkswagen Touareg', price: 410, image: 'touareg.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 410, extraHourPrice: 72 } },
     { name: 'Mazda CX-9', price: 220, image: 'cx9.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 220, extraHourPrice: 55 } },
     { name: 'Kia Sorento', price: 200, image: 'sorento.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 200, extraHourPrice: 50 } },
-
-    /* ✅ ✅ ADDED LIMOUSINE MODELS */
-    { name: 'Lincoln Navigator Limousine', price: 900, image: 'lincoln-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 900, extraHourPrice: 120 } },
-    { name: 'Hummer H2 Stretch Limo', price: 1100, image: 'hummer-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1100, extraHourPrice: 150 } },
-    { name: 'Cadillac Escalade Limo', price: 1200, image: 'escalade-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1200, extraHourPrice: 180 } },
-    { name: 'Chrysler 300 Stretch Limousine', price: 950, image: 'chrysler-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 950, extraHourPrice: 130 } },
-    { name: 'GMC Yukon XL Limousine', price: 1000, image: 'yukon-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1000, extraHourPrice: 140 } }
+    { name: 'Lincoln Limo', price: 900, image: 'lincoln-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 900, extraHourPrice: 120 } },
+    { name: 'Hummer Limo', price: 1100, image: 'hummer-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1100, extraHourPrice: 150 } },
+    { name: 'Escalade Limo', price: 1200, image: 'escalade-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1200, extraHourPrice: 180 } },
+    { name: 'Chrysler Limo', price: 950, image: 'chrysler-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 950, extraHourPrice: 130 } },
+    { name: 'GMC Yukon Limo', price: 1000, image: 'yukon-limo.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Limousine', rental: { baseHours: 5, basePrice: 1000, extraHourPrice: 140 } }
   ];
 
   filteredCars = [...this.cars];
 
+  // ✅ QUOTE FORM STATE
+  showQuote = false;
+  selectedCar: any = null;
+
+  quoteName: string = "";
+  quotePhone: string = "";
+  quoteMsg: string = "";
+
+  // ✅ FILTER CARS
   filterCars(category: string) {
-    if (category === 'All') {
-      this.filteredCars = [...this.cars];
-    } else {
-      this.filteredCars = this.cars.filter(car => car.category === category);
-    }
+    this.filteredCars =
+      category === 'All'
+        ? [...this.cars]
+        : this.cars.filter(car => car.category === category);
+
     this.scrollToCars();
   }
 
   scrollToCars() {
     const element = document.getElementById('cars');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ✅ OPEN CAR DETAILS PAGE
+  viewCar(name: string) {
+    const slug = name.toLowerCase().replace(/ /g, '-');
+    this.router.navigate(['/car', slug]); // Ensure route /car/:name exists
+  }
+
+  // ✅ OPEN QUOTE POPUP
+  openQuote(car: any) {
+    this.selectedCar = car;
+    this.showQuote = true;
+  }
+
+  closeQuote() {
+    this.showQuote = false;
+  }
+
+  // ✅ SUBMIT QUOTE (WHATSAPP)
+  submitQuote() {
+    if (!this.quoteName || !this.quotePhone) {
+      alert("Please enter your name and phone number.");
+      return;
     }
+
+    const phoneNumber = '971507172796';
+    const message =
+      `🚗 QUOTE REQUEST\n\n` +
+      `Car: ${this.selectedCar.name}\n` +
+      `Price: AED ${this.selectedCar.price}\n\n` +
+      `👤 Name: ${this.quoteName}\n` +
+      `📞 Phone: ${this.quotePhone}\n` +
+      `📝 Message: ${this.quoteMsg || 'No message provided.'}`;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, '_blank'); // Open WhatsApp
+    this.closeQuote(); // Close modal
+    this.quoteName = "";
+    this.quotePhone = "";
+    this.quoteMsg = "";
   }
 }
