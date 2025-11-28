@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(#6f6a6a, #dfdbdb);
+  background: linear-gradient(#351111, #ffffff);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
 }
 
 /* ========================================================= */
-/* CAR SEQUENTIAL ANIMATION — NOW WITH CAR 4 */
+/* CAR SEQUENTIAL ANIMATION — NOW WITH CAR 5 & CAR 6 */
 /* ========================================================= */
 
 .car-img {
@@ -57,51 +57,66 @@
 /* Depth effects */
 .car3 { bottom: -1%; }
 .car4 { bottom: -9%; }
+.car5 { bottom: -4; }
+.car6 { bottom: -16%; }
 
-/* 27s looping animation for all cars */
-.car1 { animation: car1Motion 27s ease-in-out infinite; }
-.car2 { animation: car2Motion 27s ease-in-out infinite; }
-.car3 { animation: car3Motion 27s ease-in-out infinite; }
-.car4 { animation: car4Motion 27s ease-in-out infinite; }
+/* Total 40.5s cycle */
+.car1 { animation: car1Motion 40.5s ease-in-out infinite; }
+.car2 { animation: car2Motion 40.5s ease-in-out infinite; }
+.car3 { animation: car3Motion 40.5s ease-in-out infinite; }
+.car4 { animation: car4Motion 40.5s ease-in-out infinite; }
+.car5 { animation: car5Motion 40.5s ease-in-out infinite; }
+.car6 { animation: car6Motion 40.5s ease-in-out infinite; }
 
-/* -------------------------------------- */
-/* CAR 1: 0% → 25% */
-/* -------------------------------------- */
+/* Helper: Each car gets a 16.66% window */
+ 
+/* CAR 1: 0% → 16.66% */
 @keyframes car1Motion {
-  0%, 25%   { left: 100%; opacity: 1; }
-  5%, 20%   { left: 50%; transform: translateX(-50%); opacity: 1; }
-  25%, 100% { left: -40%; opacity: 0; }
+  0%, 16.66%   { left: 100%; opacity: 1; }
+  4%, 14%      { left: 50%; transform: translateX(-50%); opacity: 1; }
+  16.66%, 100% { left: -40%; opacity: 0; }
 }
 
-/* -------------------------------------- */
-/* CAR 2: 25% → 50% */
-/* -------------------------------------- */
+/* CAR 2: 16.66% → 33.33% */
 @keyframes car2Motion {
-  0%, 25%      { opacity: 0; }
-  25.1%, 50%   { left: 100%; opacity: 1; transform: translateX(0); }
-  32%, 45%     { left: 50%; transform: translateX(-50%); opacity: 1; }
-  50%, 100%    { left: -40%; opacity: 0; }
+  0%, 16.5%      { opacity: 0; }
+  16.66%, 33.33% { left: 100%; opacity: 1; transform: translateX(0); }
+  20%, 30%       { left: 50%; transform: translateX(-50%); opacity: 1; }
+  33.33%, 100%   { left: -40%; opacity: 0; }
 }
 
-/* -------------------------------------- */
-/* CAR 3: 50% → 75% */
-/* -------------------------------------- */
+/* CAR 3: 33.33% → 50% */
 @keyframes car3Motion {
-  0%, 50%      { opacity: 0; }
-  50.1%, 75%   { left: 100%; opacity: 1; transform: translateX(0); }
-  58%, 70%     { left: 50%; transform: translateX(-50%); opacity: 1; }
-  75%, 100%    { left: -40%; opacity: 0; }
+  0%, 33.33%    { opacity: 0; }
+  33.34%, 50%   { left: 100%; opacity: 1; transform: translateX(0); }
+  38%, 47%      { left: 50%; transform: translateX(-50%); opacity: 1; }
+  50%, 100%     { left: -40%; opacity: 0; }
 }
 
-/* -------------------------------------- */
-/* CAR 4: 75% → 100% (NEW) */
-/* -------------------------------------- */
+/* CAR 4: 50% → 66.66% */
 @keyframes car4Motion {
-  0%, 75%       { opacity: 0; }
-  75.1%, 100%   { left: 100%; opacity: 1; transform: translateX(0); }
-  82%, 95%      { left: 50%; transform: translateX(-50%); opacity: 1; }
-  100%          { left: -40%; opacity: 0; }
+  0%, 50%        { opacity: 0; }
+  50.1%, 66.66%  { left: 100%; opacity: 1; transform: translateX(0); }
+  55%, 63%       { left: 50%; transform: translateX(-50%); opacity: 1; }
+  66.66%, 100%   { left: -40%; opacity: 0; }
 }
+
+/* CAR 5: 66.66% → 83.33% */
+@keyframes car5Motion {
+  0%, 66.66%     { opacity: 0; }
+  66.67%, 83.33% { left: 100%; opacity: 1; transform: translateX(0); }
+  71%, 80%       { left: 50%; transform: translateX(-50%); opacity: 1; }
+  83.33%, 100%   { left: -40%; opacity: 0; }
+}
+
+/* CAR 6: 83.33% → 100% */
+@keyframes car6Motion {
+  0%, 83.33%     { opacity: 0; }
+  83.34%, 100%   { left: 100%; opacity: 1; transform: translateX(0); }
+  88%, 98%       { left: 50%; transform: translateX(-50%); opacity: 1; }
+  100%           { left: -40%; opacity: 0; }
+}
+
 
 /* ========================================================= */
 /* HERO CONTENT */
@@ -110,10 +125,10 @@
 .hero-content {
   position: relative;
   z-index: 10;
-  color: #fff;
+  color: #8cbbe8;
   text-align: center;
   max-width: 700px;
-  padding: 0 20px;
+  padding: 0 px;
   top: -10%;
 }
 
@@ -123,17 +138,17 @@
   margin-bottom: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #ff3c00;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  color: #563feb;
 }
 
 .hero-content p {
   font-size: 20px;
   margin-bottom: 25px;
   line-height: 1.5;
-  color: #f5f5f5;
+  color: #04fc2d;
 }
 
+/* Buttons */
 .hero-buttons {
   display: flex;
   justify-content: center;
@@ -173,7 +188,7 @@
   box-shadow: 0px 8px 30px rgba(255, 50, 0, 0.4);
 }
 
-/* TAGLINE ANIMATION SYNCED TO CAR 1 */
+/* TAGLINE ANIMATION */
 .tagline {
   font-size: 16px;
   font-weight: 500;
@@ -200,10 +215,7 @@
 }
 
 @media (max-width: 600px) {
-  .car-img { 
-    width: 80%;
-    bottom: 5%;
-  }
+  .car-img { width: 80%; bottom: 5%; }
   .hero-content { top: -5%; }
   .hero-content h1 { font-size: 28px; }
   .hero-content p { font-size: 16px; }

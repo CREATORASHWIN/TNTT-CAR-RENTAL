@@ -1,0 +1,181 @@
+/* GRID WRAPPER */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD DESIGN */
+.car-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.car-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  background: #f3f3f3;
+}
+
+/* TITLE */
+.car-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* PRICE */
+.car-price {
+  color: #d32f2f;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* CATEGORY */
+.category-badge {
+  padding: 4px 10px;
+  background: #ececec;
+  font-size: 0.9rem;
+  display: inline-block;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+
+/* GET INQUIRY BUTTON */
+.action-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ff6b00;     /* UPDATED: Inquiry Button Color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #e65f00;     /* Hover Color */
+}
+
+/* CONTACT ICONS */
+.car-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+/* WHATSAPP ICON */
+.whatsapp-icon {
+  color: #25D366 !important;     /* WhatsApp Green */
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.whatsapp-icon:hover {
+  color: #1ebe5d !important;     /* Darker Green */
+}
+
+/* CALL ICON */
+.call-icon {
+  color: #ff3b30 !important;      /* Red Phone */
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.call-icon:hover {
+  color: #d63025 !important;      /* Darker Red */
+}
+
+/* ENQUIRY POPUP */
+.enquiry-popup {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.enquiry-popup h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.enquiry-popup input,
+.enquiry-popup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.enquiry-popup input:focus,
+.enquiry-popup textarea:focus {
+  border-color: #ff6b00; /* Match Inquiry Button */
+}
+
+/* POPUP SUBMIT BUTTON */
+.enquiry-popup .submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.enquiry-popup .submit-btn:hover {
+  background: #e65f00;
+}
+
+/* CLOSE BUTTON */
+.enquiry-popup .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.enquiry-popup .close-btn:hover {
+  background: #d32f2f;
+}

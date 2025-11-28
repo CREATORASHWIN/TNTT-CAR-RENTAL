@@ -2,3 +2,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* -----------------------------------
+   GLOBAL FONT SIZE (INCREASE WEBSITE TEXT)
+   ----------------------------------- */
+
+/* Increase base font size for entire website */
+html {
+  font-size: 18px;   /* Default is 16px — now text becomes slightly larger */
+}
+
+/* Optional: better reading experience */
+body {
+  font-size: 1rem;   /* Scales with html root */
+  line-height: 1.6;  /* Improves readability */
+  font-family: 'Inter', sans-serif; /* Optional clean font */
+}
+
+/* Optional: Make headings slightly larger for better visual hierarchy */
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}

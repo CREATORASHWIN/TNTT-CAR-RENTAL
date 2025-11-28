@@ -12,7 +12,8 @@ import { CommonModule } from '@angular/common';
 export class CarDetailsComponent {
 
   car: any = null;
-  // ✅ FULL CAR LIST (same as CarGridComponent)
+
+  // ✅ FULL CAR LIST UPDATED (ALL VEHICLES + NEW TOYOTA MODELS ADDED)
   cars = [
     { name: 'Nissan Patrol', price: 360, image: 'patrol.jpg', seats: 7, bags: 4, fuel: 'Petrol', transmission: 'Automatic' },
     { name: 'Toyota Corolla', price: 120, image: 'corolla.jpg', seats: 5, bags: 2, fuel: 'Petrol', transmission: 'Automatic' },
@@ -35,6 +36,12 @@ export class CarDetailsComponent {
     { name: 'Mazda CX-9', price: 220, image: 'cx9.jpg', seats: 7, bags: 4, fuel: 'Petrol', transmission: 'Automatic' },
     { name: 'Kia Sorento', price: 200, image: 'sorento.jpg', seats: 7, bags: 4, fuel: 'Petrol', transmission: 'Automatic' },
 
+    // ✅ NEWLY ADDED TOYOTA VEHICLES
+    { name: 'Toyota Previa', price: 300, image: 'toyota-previa.jpg', seats: 7, bags: 4, fuel: 'Petrol', transmission: 'Automatic' },
+    { name: 'Toyota Fortuner', price: 260, image: 'toyota-fortuner.jpg', seats: 7, bags: 4, fuel: 'Petrol', transmission: 'Automatic' },
+    { name: 'Toyota HiAce', price: 280, image: 'toyota-hiace.jpg', seats: 13, bags: 6, fuel: 'Petrol', transmission: 'Automatic' },
+    { name: 'Toyota Innova', price: 240, image: 'toyota-innova.jpg', seats: 7, bags: 4, fuel: 'Petrol', transmission: 'Automatic' },
+
     // ✅ LIMOUSINES
     { name: 'Lincoln Navigator Limousine', price: 900, image: 'lincoln-limo.jpg', seats: 18, bags: 6, fuel: 'Petrol', transmission: 'Automatic' },
     { name: 'Hummer Limo', price: 1100, image: 'hummer-limo.jpg', seats: 20, bags: 6, fuel: 'Petrol', transmission: 'Automatic' },
@@ -42,7 +49,8 @@ export class CarDetailsComponent {
     { name: 'Chrysler Limo', price: 950, image: 'chrysler-limo.jpg', seats: 18, bags: 6, fuel: 'Petrol', transmission: 'Automatic' },
     { name: 'GMC Yukon Limo', price: 1000, image: 'yukon-limo.jpg', seats: 18, bags: 6, fuel: 'Petrol', transmission: 'Automatic' }
   ];
-constructor(private route: ActivatedRoute) {}
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     const slug = this.route.snapshot.paramMap.get('name');
