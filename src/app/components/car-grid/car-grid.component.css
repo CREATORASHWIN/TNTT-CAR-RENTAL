@@ -13,7 +13,7 @@
   padding: 15px;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .car-card:hover {
@@ -55,127 +55,65 @@
   margin-top: 6px;
 }
 
+/* ACTION BUTTONS */
+.car-actions a,
+.car-actions button {
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+/* WHATSAPP BUTTON */
+.car-actions .whatsapp-btn {
+  background: #015620;
+  color: white;
+}
+
+.car-actions .whatsapp-btn:hover {
+  background: #02eb5f;
+  transform: scale(1.05);
+}
+
+/* CALL BUTTON */
+.car-actions .call-btn {
+  background: #021e4a; /* Tailwind blue-600 */
+  color: white;
+}
+
+.car-actions .call-btn:hover {
+  background: #2563eb; /* Tailwind blue-700 */
+  transform: scale(1.05);
+}
+
 /* GET INQUIRY BUTTON */
-.action-btn {
-  width: 100%;
-  padding: 10px;
-  background: #ff6b00;     /* UPDATED: Inquiry Button Color */
+.car-actions .inquiry-btn {
+  background: #f00202; /* Tailwind orange-600 */
   color: white;
-  border: none;
-  border-radius: 8px;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background 0.2s ease;
 }
 
-.action-btn:hover {
-  background: #e65f00;     /* Hover Color */
+.car-actions .inquiry-btn:hover {
+  background: #ea580c; /* Tailwind orange-700 */
+  transform: scale(1.05);
 }
 
-/* CONTACT ICONS */
-.car-actions {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-  justify-content: center;
-}
-
-/* WHATSAPP ICON */
-.whatsapp-icon {
-  color: #25D366 !important;     /* WhatsApp Green */
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.whatsapp-icon:hover {
-  color: #1ebe5d !important;     /* Darker Green */
-}
-
-/* CALL ICON */
-.call-icon {
-  color: #ff3b30 !important;      /* Red Phone */
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.call-icon:hover {
-  color: #d63025 !important;      /* Darker Red */
-}
-
-/* ENQUIRY POPUP */
-.enquiry-popup {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-
-.enquiry-popup h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.enquiry-popup input,
-.enquiry-popup textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-
-.enquiry-popup input:focus,
-.enquiry-popup textarea:focus {
-  border-color: #ff6b00; /* Match Inquiry Button */
-}
-
-/* POPUP SUBMIT BUTTON */
+/* QUOTE POPUP BUTTONS */
 .enquiry-popup .submit-btn {
-  width: 100%;
-  padding: 10px;
-  background: #ff6b00;
+  background: #3b82f6;
   color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .enquiry-popup .submit-btn:hover {
-  background: #e65f00;
+  background: #2563eb;
+  transform: scale(1.03);
 }
 
-/* CLOSE BUTTON */
 .enquiry-popup .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #f44336;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-  text-align: center;
-  transition: background 0.2s ease;
+  background: #d1d5db; /* Tailwind gray-300 */
+  color: black;
+  transition: all 0.3s ease;
 }
 
 .enquiry-popup .close-btn:hover {
-  background: #d32f2f;
+  background: #9ca3af; /* Tailwind gray-400 */
+  transform: scale(1.05);
 }

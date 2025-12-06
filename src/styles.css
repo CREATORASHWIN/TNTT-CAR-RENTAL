@@ -1,33 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
+/* ---------------------------------------------------
+   GLOBAL STYLES + TAILWIND
+--------------------------------------------------- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* -----------------------------------
-   GLOBAL FONT SIZE (INCREASE WEBSITE TEXT)
-   ----------------------------------- */
+/* ---------------------------------------------------
+   GLOBAL FONT IMPROVEMENT + BRIGHTNESS
+--------------------------------------------------- */
 
-/* Increase base font size for entire website */
+/* Increase overall font size */
 html {
-  font-size: 18px;   /* Default is 16px — now text becomes slightly larger */
+  font-size: 18px;               /* Larger than default 16px */
+  scroll-behavior: smooth;       /* Smooth scrolling */
 }
 
-/* Optional: better reading experience */
+/* Body default styling */
 body {
-  font-size: 1rem;   /* Scales with html root */
-  line-height: 1.6;  /* Improves readability */
-  font-family: 'Inter', sans-serif; /* Optional clean font */
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #111111;                /* Strong readable text */
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;     /* Brighter clean background */
 }
 
-/* Optional: Make headings slightly larger for better visual hierarchy */
-h1 {
-  font-size: 2.2rem;
+/* ---------------------------------------------------
+   HEADING STYLES (Bold + Larger)
+--------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;              /* Extra bold headings */
+  color: #000000;                /* Strong contrast */
+  margin-bottom: 0.5rem;
 }
 
-h2 {
-  font-size: 1.8rem;
+/* Header Sizes */
+h1 { font-size: 2.6rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+
+/* ---------------------------------------------------
+   GENERAL TEXT (Bold + Clean)
+--------------------------------------------------- */
+p, span, a, li {
+  font-weight: 600;              /* Medium bold for clarity */
+  color: #111111;
 }
 
-h3 {
-  font-size: 1.4rem;
+/* Links cleaner */
+a {
+  text-decoration: none;
+  color: #1a73e8;               /* Brighter blue for links */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #1558b0;
+}
+
+/* ---------------------------------------------------
+   BUTTON IMPROVEMENT (Bold + Bright Color)
+--------------------------------------------------- */
+button {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #ffffff;
+  background-color: #1a73e8;    /* Bright blue */
+  border-radius: 0.5rem;
+  padding: 0.65rem 1.3rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1558b0;
+}
+
+/* ---------------------------------------------------
+   CARD TEXT (Car components etc.)
+--------------------------------------------------- */
+.car-card {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111111;
+  background-color: #ffffff;    /* Brighter card */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.car-card .car-name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #000000;
+}
+
+.car-card .car-price {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #000000;
 }
