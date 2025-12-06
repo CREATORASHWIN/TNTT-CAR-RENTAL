@@ -64,7 +64,7 @@
 
 /* WHATSAPP BUTTON */
 .car-actions .whatsapp-btn {
-  background: #01762c;
+  background: #015620;
   color: white;
 }
 
@@ -86,7 +86,7 @@
 
 /* GET INQUIRY BUTTON */
 .car-actions .inquiry-btn {
-  background: #f00202; /* Tailwind orange-600 */
+  background: #b802ea; /* Tailwind orange-600 */
   color: white;
 }
 

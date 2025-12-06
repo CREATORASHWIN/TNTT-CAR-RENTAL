@@ -15,9 +15,11 @@ export class CarGridComponent {
   constructor(private router: Router) {}
 
   cars = [
-    { name: 'Nissan Patrol', price: 300, image: 'patrol.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 360, extraHourPrice: 65 } },
+    { name: 'Nissan Patrol', price: 450, image: 'patrol.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 360, extraHourPrice: 65 } },
 
     /* ADDED NEW CARS */
+    { name: 'Toyota Land Cruiser', price: 320, image: 'landcruiser.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 420, extraHourPrice: 70 } },
+
     { name: 'Rolls Royce', price: 1000, image: 'rolls-royce.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Luxury', rental: { baseHours: 10, basePrice: 1500, extraHourPrice: 200 } },
     { name: 'Mercedes Viano', price: 500, image: 'viano.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Van', rental: { baseHours: 10, basePrice: 500, extraHourPrice: 80 } },
     { name: 'Mercedes S-Class', price: 850, image: 'sclass.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Luxury', rental: { baseHours: 10, basePrice: 900, extraHourPrice: 120 } },
@@ -33,7 +35,7 @@ export class CarGridComponent {
     { name: 'Toyota Innova', price: 200, image: 'toyota-innova.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'Van', rental: { baseHours: 10, basePrice: 320, extraHourPrice: 55 } },
 
     /* LUXURY SUV KEPT */
-    { name: 'Toyota Land Cruiser', price: 320, image: 'landcruiser.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 420, extraHourPrice: 70 } },
+
     { name: 'Toyota Fortuner', price: 300, image: 'toyota-fortuner.jpg', whatsappLink: 'https://wa.me/971507172796', phone: '+971507172796', category: 'SUV', rental: { baseHours: 10, basePrice: 300, extraHourPrice: 55 } },
 
     /* LIMO SECTION KEPT */

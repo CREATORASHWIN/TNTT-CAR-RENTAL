@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(#351111, #ffffff);
+  background: linear-gradient(#9009f1f0, #ffffff);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -138,14 +138,14 @@
   margin-bottom: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #563feb;
+  color: #120182;
 }
 
 .hero-content p {
-  font-size: 20px;
+  font-size: 28px;
   margin-bottom: 25px;
   line-height: 1.5;
-  color: #04fc2d;
+  color: #ff0000;
 }
 
 /* Buttons */

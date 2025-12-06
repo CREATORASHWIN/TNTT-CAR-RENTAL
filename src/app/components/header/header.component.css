@@ -33,7 +33,7 @@ nav a:hover img {
 nav a span {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #2563EB; /* blue-600 */
+  color: #012a83; /* blue-600 */
   margin-left: 0.5rem;
   transition: color 0.3s ease;
 }
