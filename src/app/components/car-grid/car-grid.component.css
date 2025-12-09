@@ -64,7 +64,7 @@
 
 /* WHATSAPP BUTTON */
 .car-actions .whatsapp-btn {
-  background: #015620;
+  background: #016425;
   color: white;
 }
 
@@ -75,7 +75,7 @@
 
 /* CALL BUTTON */
 .car-actions .call-btn {
-  background: #115fdb; /* Tailwind blue-600 */
+  background: #012053; /* Tailwind blue-600 */
   color: white;
 }
 

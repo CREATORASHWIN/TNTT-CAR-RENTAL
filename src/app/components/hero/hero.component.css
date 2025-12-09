@@ -1,9 +1,17 @@
-/* HERO SECTION WRAPPER */
+/* =============================================
+   HERO SECTION — with background image + content
+   ============================================= */
 .hero-section {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(#9009f1f0, #ffffff);
+  
+  /* Local background image — adjust the path as needed */
+   background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -11,7 +19,7 @@
   justify-content: center;
 }
 
-/* FOG IMAGES */
+/* FOG IMAGES (if you use fog overlays) */
 .fog-img {
   position: absolute;
   top: 0;
@@ -22,15 +30,11 @@
   z-index: 1;
 }
 
-/* Layer 1 */
+/* Fog animation layers */
 #fog1 { left: 0; animation: fogMove 50s linear infinite; }
 #fog1-2 { left: -100%; animation: fogMove 50s linear infinite; animation-delay: -25s; }
-
-/* Layer 2 */
 #fog2 { left: 0; animation: fogMove 65s linear infinite; }
 #fog2-2 { left: -100%; animation: fogMove 65s linear infinite; animation-delay: -32s; }
-
-/* Layer 3 */
 #fog3 { left: 0; animation: fogMove 80s linear infinite; }
 #fog3-2 { left: -100%; animation: fogMove 80s linear infinite; animation-delay: -40s; }
 
@@ -39,10 +43,7 @@
   100% { transform: translateX(50%); }
 }
 
-/* ========================================================= */
-/* CAR SEQUENTIAL ANIMATION — NOW WITH CAR 5 & CAR 6 */
-/* ========================================================= */
-
+/* CAR IMAGE ANIMATION */
 .car-img {
   position: absolute;
   bottom: 1%;
@@ -54,82 +55,58 @@
   transform: translateX(0);
 }
 
-/* Depth effects */
+/* optional depth-based bottom adjustments */
 .car3 { bottom: -1%; }
 .car4 { bottom: -9%; }
-.car5 { bottom: -; }
-.car6 { bottom: -16%; }
+/* adjust .car5/.car6 as needed */
 
-/* Total 40.5s cycle */
+/* Applying animations to each car */
 .car1 { animation: car1Motion 40.5s ease-in-out infinite; }
 .car2 { animation: car2Motion 40.5s ease-in-out infinite; }
 .car3 { animation: car3Motion 40.5s ease-in-out infinite; }
 .car4 { animation: car4Motion 40.5s ease-in-out infinite; }
 .car5 { animation: car5Motion 40.5s ease-in-out infinite; }
-.car6 { animation: car6Motion 40.5s ease-in-out infinite; }
+/* .car6 { animation: car6Motion 40.5s ease-in-out infinite; } */
 
-/* Helper: Each car gets a 16.66% window */
- 
-/* CAR 1: 0% → 16.66% */
 @keyframes car1Motion {
   0%, 16.66%   { left: 100%; opacity: 1; }
   4%, 14%      { left: 50%; transform: translateX(-50%); opacity: 1; }
   16.66%, 100% { left: -40%; opacity: 0; }
 }
-
-/* CAR 2: 16.66% → 33.33% */
 @keyframes car2Motion {
   0%, 16.5%      { opacity: 0; }
   16.66%, 33.33% { left: 100%; opacity: 1; transform: translateX(0); }
   20%, 30%       { left: 50%; transform: translateX(-50%); opacity: 1; }
   33.33%, 100%   { left: -40%; opacity: 0; }
 }
-
-/* CAR 3: 33.33% → 50% */
 @keyframes car3Motion {
   0%, 33.33%    { opacity: 0; }
   33.34%, 50%   { left: 100%; opacity: 1; transform: translateX(0); }
   38%, 47%      { left: 50%; transform: translateX(-50%); opacity: 1; }
   50%, 100%     { left: -40%; opacity: 0; }
 }
-
-/* CAR 4: 50% → 66.66% */
 @keyframes car4Motion {
   0%, 50%        { opacity: 0; }
   50.1%, 66.66%  { left: 100%; opacity: 1; transform: translateX(0); }
   55%, 63%       { left: 50%; transform: translateX(-50%); opacity: 1; }
   66.66%, 100%   { left: -40%; opacity: 0; }
 }
-
-/* CAR 5: 66.66% → 83.33% */
 @keyframes car5Motion {
   0%, 66.66%     { opacity: 0; }
   66.67%, 83.33% { left: 100%; opacity: 1; transform: translateX(0); }
   71%, 80%       { left: 50%; transform: translateX(-50%); opacity: 1; }
   83.33%, 100%   { left: -40%; opacity: 0; }
 }
+/* add @keyframes car6Motion if you use car6 */
 
-/* CAR 6: 83.33% → 100% */
-@keyframes car6Motion {
-  0%, 83.33%     { opacity: 0; }
-  83.34%, 100%   { left: 100%; opacity: 1; transform: translateX(0); }
-  88%, 98%       { left: 50%; transform: translateX(-50%); opacity: 1; }
-  100%           { left: -40%; opacity: 0; }
-}
-
-
-/* ========================================================= */
-/* HERO CONTENT */
-/* ========================================================= */
-
+/* HERO CONTENT (text + buttons) */
 .hero-content {
   position: relative;
   z-index: 10;
-  color: #8cbbe8;
   text-align: center;
   max-width: 700px;
-  padding: 0 px;
-  top: -10%;
+  top: -10%; /* adjust vertical position if needed */
+  /* text color, font styles, etc. as before */
 }
 
 .hero-content h1 {
@@ -140,7 +117,6 @@
   text-transform: uppercase;
   color: #120182;
 }
-
 .hero-content p {
   font-size: 28px;
   margin-bottom: 25px;
@@ -170,7 +146,6 @@
   background: #ff3c00;
   color: #fff;
 }
-
 .explore-btn:hover {
   background: #e63200;
   box-shadow: 0px 8px 30px rgba(255, 50, 0, 0.6);
@@ -181,14 +156,13 @@
   color: #ff3c00;
   box-shadow: 0px 6px 25px rgba(255, 60, 0, 0.3);
 }
-
 .fleet-btn:hover {
   background: #f5f5f5;
   color: #e63200;
   box-shadow: 0px 8px 30px rgba(255, 50, 0, 0.4);
 }
 
-/* TAGLINE ANIMATION */
+/* TAGLINE animation */
 .tagline {
   font-size: 16px;
   font-weight: 500;
@@ -198,14 +172,13 @@
   opacity: 0;
   animation: taglineFade 9s ease-in-out infinite;
 }
-
 @keyframes taglineFade {
   0%, 34%   { opacity: 0; }
   35%, 65%  { opacity: 1; }
   66%, 100% { opacity: 0; }
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE STYLES */
 @media (max-width: 992px) {
   .car-img { width: 55%; }
   .hero-content { top: -8%; }
@@ -213,7 +186,6 @@
   .hero-content p { font-size: 18px; }
   .hero-buttons { flex-direction: column; gap: 15px; }
 }
-
 @media (max-width: 600px) {
   .car-img { width: 80%; bottom: 5%; }
   .hero-content { top: -5%; }
